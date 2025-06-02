@@ -1,235 +1,508 @@
-  <section id="banner">
-   
-  <!-- Slider -->
-        <div id="main-slider" class="flexslider">
-            <ul class="slides">
-              <li>
-                <img src="<?php echo web_root; ?>plugins/home-plugins/img/slides/1.jpg" alt="" />
-                <div class="flex-caption">
-                    <h3>innovation</h3> 
-          <p>We create the opportunities</p> 
-           
-                </div>
-              </li>
-              <li>
-                <img src="<?php echo web_root; ?>plugins/home-plugins/img/slides/2.jpg" alt="" />
-                <div class="flex-caption">
-                    <h3>Specialize</h3> 
-          <p>Success depends on work</p> 
-           
-                </div>
-              </li>
+
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+      <h1>
+        Dashboard
+        <small>Control panel</small>
+      </h1>
+      <ol class="breadcrumb">
+        <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
+        <li class="active">Dashboard</li>
+      </ol>
+    </section>
+
+    <!-- Main content -->
+    <section class="content">
+      <!-- Small boxes (Stat box) -->
+      <div class="row">
+        <div class="col-lg-3 col-xs-6">
+          <!-- small box -->
+          <div class="small-box bg-aqua">
+            <div class="inner">
+              <h3>150</h3>
+
+              <p>New Orders</p>
+            </div>
+            <div class="icon">
+              <i class="ion ion-bag"></i>
+            </div>
+            <a href="#" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
+          </div>
+        </div>
+        <!-- ./col -->
+        <div class="col-lg-3 col-xs-6">
+          <!-- small box -->
+          <div class="small-box bg-green">
+            <div class="inner">
+              <h3>53<sup style="font-size: 20px">%</sup></h3> 
+              <p>Bounce Rate</p>
+            </div>
+            <div class="icon">
+              <i class="ion ion-stats-bars"></i>
+            </div>
+            <a href="#" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
+          </div>
+        </div>
+        <!-- ./col -->
+        <div class="col-lg-3 col-xs-6">
+          <!-- small box -->
+          <div class="small-box bg-yellow">
+            <div class="inner">
+              <h3>44</h3>
+
+              <p>User Registrations</p>
+            </div>
+            <div class="icon">
+              <i class="ion ion-person-add"></i>
+            </div>
+            <a href="#" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
+          </div>
+        </div>
+        <!-- ./col -->
+        <div class="col-lg-3 col-xs-6">
+          <!-- small box -->
+          <div class="small-box bg-red">
+            <div class="inner">
+              <h3>65</h3> 
+              <p>Unique Visitors</p>
+            </div>
+            <div class="icon">
+              <i class="ion ion-pie-graph"></i>
+            </div>
+            <a href="#" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
+          </div>
+        </div>
+        <!-- ./col -->
+      </div>
+      <!-- /.row -->
+      <!-- Main row -->
+      <div class="row">
+        <!-- Left col -->
+        <section class="col-lg-7 connectedSortable">
+          <!-- Custom tabs (Charts with tabs)-->
+          <div class="nav-tabs-custom">
+            <!-- Tabs within a box -->
+            <ul class="nav nav-tabs pull-right">
+              <li class="active"><a href="#revenue-chart" data-toggle="tab">Area</a></li>
+              <li><a href="#sales-chart" data-toggle="tab">Donut</a></li>
+              <li class="pull-left header"><i class="fa fa-inbox"></i> Sales</li>
             </ul>
-        </div>
-  <!-- end slider -->
- 
-  </section> 
-  <section id="call-to-action-2">
-    <div class="container">
-      <div class="row">
-        <div class="col-md-10 col-sm-9">
-          <h3>Partner with Business Leaders</h3>
-          <p>Development of successful, long term, strategic relationships between customers and suppliers, based on achieving best practice and sustainable competitive advantage. In the business partner model, HR professionals work closely with business leaders and line managers to achieve shared organisational objectives.</p>
-        </div>
-       <!--  <div class="col-md-2 col-sm-3">
-          <a href="#" class="btn btn-primary">Read More</a>
-        </div> -->
-      </div>
-    </div>
-  </section>
-  
-  <section id="content">
-  
-  
-  <div class="container">
-        <div class="row">
-      <div class="col-md-12">
-        <div class="aligncenter"><h2 class="aligncenter">Company</h2><!-- Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores quae porro consequatur aliquam, incidunt eius magni provident, doloribus omnis minus ovident, doloribus omnis minus temporibus perferendis nesciunt.. --></div>
-        <br/>
-      </div>
-    </div>
-
-    <?php 
-      $sql = "SELECT * FROM `tblcompany`";
-      $mydb->setQuery($sql);
-      $comp = $mydb->loadResultList();
-
-
-      foreach ($comp as $company ) {
-        # code...
-    
-    ?>
-            <div class="col-sm-4 info-blocks">
-                <i class="icon-info-blocks fa fa-building-o"></i>
-                <div class="info-blocks-in">
-                    <h3><?php echo $company->COMPANYNAME;?></h3>
-                    <!-- <p><?php echo $company->COMPANYMISSION;?></p> -->
-                    <p>Address :<?php echo $company->COMPANYADDRESS;?></p>
-                    <p>Contact No. :<?php echo $company->COMPANYCONTACTNO;?></p>
-                </div>
+            <div class="tab-content no-padding">
+              <!-- Morris chart - Sales -->
+              <div class="chart tab-pane active" id="revenue-chart" style="position: relative; height: 300px;"></div>
+              <div class="chart tab-pane" id="sales-chart" style="position: relative; height: 300px;"></div>
             </div>
-
-    <?php } ?> 
-  </div>
-  </section>
-  
-  <section class="section-padding gray-bg">
-    <div class="container">
-      <div class="row">
-        <div class="col-md-12">
-          <div class="section-title text-center">
-            <h2 >Popular Jobs</h2>  
           </div>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-md-12 ">
-          <?php 
-            $sql = "SELECT * FROM `tblcategory`";
-            $mydb->setQuery($sql);
-            $cur = $mydb->loadResultList();
+          <!-- /.nav-tabs-custom -->
 
-            foreach ($cur as $result) {
-              echo '<div class="col-md-3" style="font-size:15px;padding:5px">* <a href="'.web_root.'index.php?q=category&search='.$result->CATEGORY.'">'.$result->CATEGORY.'</a></div>';
-            }
+          <!-- Chat box -->
+          <div class="box box-success">
+            <div class="box-header">
+              <i class="fa fa-comments-o"></i>
 
-          ?>
-        </div>
-      </div>
- 
-    </div>
-  </section>    
-  <section id="content-3-10" class="content-block data-section nopad content-3-10">
-  <div class="image-container col-sm-6 col-xs-12 pull-left">
-    <div class="background-image-holder">
+              <h3 class="box-title">Chat</h3>
 
-    </div>
-  </div>
-
-  <div class="container-fluid">
-    <div class="row">
-      <div class="col-sm-6 col-sm-offset-6 col-xs-12 content">
-        <div class="editContent">
-          <h3>Our Team</h3>
-        </div>
-        <div class="editContent"  style="height:235px;">
-          <p> 
-          &nbsp;&nbsp;Our "one team" attitude breaks down silos and helps us engage equally effectively from the C-suite to the front line. Our collaborative working style emphasizes teamwork, trust, and tolerance for diverging opinions. People tell us we are down-to-earth, approachable and fun.<br/><br/>
-
-          &nbsp;&nbsp;We have a passion for our clients' true results and a pragmatic drive for action that starts Monday morning 8am and doesn't let up. We rally clients with our infectious energy, to make change stick.<br/><br/>
-
-          &nbsp;&nbsp;And we never go it alone. We support and are supported to develop our own personal results stories. We balance challenging and co-creating with our clients, building the internal capabilities required for them to create repeatable results. </p>
-        </div> 
-      </div>
-    </div><!-- /.row-->
-  </div><!-- /.container -->
-</section>
-  
-  <div class="about home-about">
-        <div class="container">
-            
-            <div class="row">
-              <div class="col-md-4">
-                <!-- Heading and para -->
-                <div class="block-heading-two">
-                  <h3><span>Programes</span></h3>
+              <div class="box-tools pull-right" data-toggle="tooltip" title="Status">
+                <div class="btn-group" data-toggle="btn-toggle">
+                  <button type="button" class="btn btn-default btn-sm active"><i class="fa fa-square text-green"></i>
+                  </button>
+                  <button type="button" class="btn btn-default btn-sm"><i class="fa fa-square text-red"></i></button>
                 </div>
-                <p>Sed ut perspiciaatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur. <br><br>Sed ut perspiciaatis iste natus error sit voluptatem probably haven't heard of them accusamus.</p>
               </div>
-              <div class="col-md-4">
-                <div class="block-heading-two">
-                  <h3><span>Latest News</span></h3>
-                </div>    
-                <!-- Accordion starts -->
-                <div class="panel-group" id="accordion-alt3">
-                 <!-- Panel. Use "panel-XXX" class for different colors. Replace "XXX" with color. -->
-                  <div class="panel"> 
-                  <!-- Panel heading -->
-                   <div class="panel-heading">
-                    <h4 class="panel-title">
-                      <a data-toggle="collapse" data-parent="#accordion-alt3" href="#collapseOne-alt3">
-                      <i class="fa fa-angle-right"></i> Accordion Heading Text Item # 1
-                      </a>
-                    </h4>
-                   </div>
-                   <div id="collapseOne-alt3" class="panel-collapse collapse">
-                    <!-- Panel body -->
-                    <div class="panel-body">
-                      Sed ut perspiciaatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas
-                    </div>
-                   </div>
-                  </div>
-                  <div class="panel">
-                   <div class="panel-heading">
-                    <h4 class="panel-title">
-                      <a data-toggle="collapse" data-parent="#accordion-alt3" href="#collapseTwo-alt3">
-                      <i class="fa fa-angle-right"></i> Accordion Heading Text Item # 2
-                      </a>
-                    </h4>
-                   </div>
-                   <div id="collapseTwo-alt3" class="panel-collapse collapse">
-                    <div class="panel-body">
-                      Sed ut perspiciaatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas
-                    </div>
-                   </div>
-                  </div>
-                  <div class="panel">
-                   <div class="panel-heading">
-                    <h4 class="panel-title">
-                      <a data-toggle="collapse" data-parent="#accordion-alt3" href="#collapseThree-alt3">
-                      <i class="fa fa-angle-right"></i> Accordion Heading Text Item # 3
-                      </a>
-                    </h4>
-                   </div>
-                   <div id="collapseThree-alt3" class="panel-collapse collapse">
-                    <div class="panel-body">
-                      Sed ut perspiciaatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas
-                    </div>
-                   </div>
-                  </div>
-                  <div class="panel">
-                   <div class="panel-heading">
-                    <h4 class="panel-title">
-                      <a data-toggle="collapse" data-parent="#accordion-alt3" href="#collapseFour-alt3">
-                      <i class="fa fa-angle-right"></i> Accordion Heading Text Item # 4
-                      </a>
-                    </h4>
-                   </div>
-                   <div id="collapseFour-alt3" class="panel-collapse collapse">
-                    <div class="panel-body">
-                      Sed ut perspiciaatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas
-                    </div>
-                   </div>
+            </div>
+            <div class="box-body chat" id="chat-box">
+              <!-- chat item -->
+              <div class="item">
+                <img src="dist/img/user4-128x128.jpg" alt="user image" class="online">
+
+                <p class="message">
+                  <a href="#" class="name">
+                    <small class="text-muted pull-right"><i class="fa fa-clock-o"></i> 2:15</small>
+                    Mike Doe
+                  </a>
+                  I would like to meet you to discuss the latest news about
+                  the arrival of the new theme. They say it is going to be one the
+                  best themes on the market
+                </p>
+                <div class="attachment">
+                  <h4>Attachments:</h4>
+
+                  <p class="filename">
+                    Theme-thumbnail-image.jpg
+                  </p>
+
+                  <div class="pull-right">
+                    <button type="button" class="btn btn-primary btn-sm btn-flat">Open</button>
                   </div>
                 </div>
-                <!-- Accordion ends -->
-                
+                <!-- /.attachment -->
               </div>
-              
-              <div class="col-md-4">
-                <div class="block-heading-two">
-                  <h3><span>Testimonials</span></h3>
-                </div>  
-                     <div class="testimonials">
-                    <div class="active item">
-                      <blockquote><p>Lorem ipsum dolor met consectetur adipisicing. Aorem psum dolor met consectetur adipisicing sit amet, consectetur adipisicing elit, of them jean shorts sed magna aliqua. Lorem ipsum dolor met.</p></blockquote>
-                      <div class="carousel-info">
-                      <img alt="" src="img/team4.jpg" class="pull-left">
-                      <div class="pull-left">
-                        <span class="testimonials-name">Marc Cooper</span>
-                        <span class="testimonials-post">Technical Director</span>
-                      </div>
-                      </div>
-                    </div>
-                  </div>
+              <!-- /.item -->
+              <!-- chat item -->
+              <div class="item">
+                <img src="dist/img/user3-128x128.jpg" alt="user image" class="offline">
+
+                <p class="message">
+                  <a href="#" class="name">
+                    <small class="text-muted pull-right"><i class="fa fa-clock-o"></i> 5:15</small>
+                    Alexander Pierce
+                  </a>
+                  I would like to meet you to discuss the latest news about
+                  the arrival of the new theme. They say it is going to be one the
+                  best themes on the market
+                </p>
               </div>
-              
+              <!-- /.item -->
+              <!-- chat item -->
+              <div class="item">
+                <img src="dist/img/user2-160x160.jpg" alt="user image" class="offline">
+
+                <p class="message">
+                  <a href="#" class="name">
+                    <small class="text-muted pull-right"><i class="fa fa-clock-o"></i> 5:30</small>
+                    Susan Doe
+                  </a>
+                  I would like to meet you to discuss the latest news about
+                  the arrival of the new theme. They say it is going to be one the
+                  best themes on the market
+                </p>
+              </div>
+              <!-- /.item -->
             </div>
-            
-                        
-             
-            <br>
-           
+            <!-- /.chat -->
+            <div class="box-footer">
+              <div class="input-group">
+                <input class="form-control" placeholder="Type message...">
+
+                <div class="input-group-btn">
+                  <button type="button" class="btn btn-success"><i class="fa fa-plus"></i></button>
+                </div>
+              </div>
             </div>
-            
           </div>
+          <!-- /.box (chat box) -->
+
+          <!-- TO DO List -->
+          <div class="box box-primary">
+            <div class="box-header">
+              <i class="ion ion-clipboard"></i>
+
+              <h3 class="box-title">To Do List</h3>
+
+              <div class="box-tools pull-right">
+                <ul class="pagination pagination-sm inline">
+                  <li><a href="#">&laquo;</a></li>
+                  <li><a href="#">1</a></li>
+                  <li><a href="#">2</a></li>
+                  <li><a href="#">3</a></li>
+                  <li><a href="#">&raquo;</a></li>
+                </ul>
+              </div>
+            </div>
+            <!-- /.box-header -->
+            <div class="box-body">
+              <ul class="todo-list">
+                <li>
+                  <!-- drag handle -->
+                      <span class="handle">
+                        <i class="fa fa-ellipsis-v"></i>
+                        <i class="fa fa-ellipsis-v"></i>
+                      </span>
+                  <!-- checkbox -->
+                  <input type="checkbox" value="" name="">
+                  <!-- todo text -->
+                  <span class="text">Design a nice theme</span>
+                  <!-- Emphasis label -->
+                  <small class="label label-danger"><i class="fa fa-clock-o"></i> 2 mins</small>
+                  <!-- General tools such as edit or delete-->
+                  <div class="tools">
+                    <i class="fa fa-edit"></i>
+                    <i class="fa fa-trash-o"></i>
+                  </div>
+                </li>
+                <li>
+                      <span class="handle">
+                        <i class="fa fa-ellipsis-v"></i>
+                        <i class="fa fa-ellipsis-v"></i>
+                      </span>
+                  <input type="checkbox" value="" name="">
+                  <span class="text">Make the theme responsive</span>
+                  <small class="label label-info"><i class="fa fa-clock-o"></i> 4 hours</small>
+                  <div class="tools">
+                    <i class="fa fa-edit"></i>
+                    <i class="fa fa-trash-o"></i>
+                  </div>
+                </li>
+                <li>
+                      <span class="handle">
+                        <i class="fa fa-ellipsis-v"></i>
+                        <i class="fa fa-ellipsis-v"></i>
+                      </span>
+                  <input type="checkbox" value="" name="">
+                  <span class="text">Let theme shine like a star</span>
+                  <small class="label label-warning"><i class="fa fa-clock-o"></i> 1 day</small>
+                  <div class="tools">
+                    <i class="fa fa-edit"></i>
+                    <i class="fa fa-trash-o"></i>
+                  </div>
+                </li>
+                <li>
+                      <span class="handle">
+                        <i class="fa fa-ellipsis-v"></i>
+                        <i class="fa fa-ellipsis-v"></i>
+                      </span>
+                  <input type="checkbox" value="" name="">
+                  <span class="text">Let theme shine like a star</span>
+                  <small class="label label-success"><i class="fa fa-clock-o"></i> 3 days</small>
+                  <div class="tools">
+                    <i class="fa fa-edit"></i>
+                    <i class="fa fa-trash-o"></i>
+                  </div>
+                </li>
+                <li>
+                      <span class="handle">
+                        <i class="fa fa-ellipsis-v"></i>
+                        <i class="fa fa-ellipsis-v"></i>
+                      </span>
+                  <input type="checkbox" value="" name="">
+                  <span class="text">Check your messages and notifications</span>
+                  <small class="label label-primary"><i class="fa fa-clock-o"></i> 1 week</small>
+                  <div class="tools">
+                    <i class="fa fa-edit"></i>
+                    <i class="fa fa-trash-o"></i>
+                  </div>
+                </li>
+                <li>
+                      <span class="handle">
+                        <i class="fa fa-ellipsis-v"></i>
+                        <i class="fa fa-ellipsis-v"></i>
+                      </span>
+                  <input type="checkbox" value="" name="">
+                  <span class="text">Let theme shine like a star</span>
+                  <small class="label label-default"><i class="fa fa-clock-o"></i> 1 month</small>
+                  <div class="tools">
+                    <i class="fa fa-edit"></i>
+                    <i class="fa fa-trash-o"></i>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <!-- /.box-body -->
+            <div class="box-footer clearfix no-border">
+              <button type="button" class="btn btn-default pull-right"><i class="fa fa-plus"></i> Add item</button>
+            </div>
+          </div>
+          <!-- /.box -->
+
+          <!-- quick email widget -->
+          <div class="box box-info">
+            <div class="box-header">
+              <i class="fa fa-envelope"></i>
+
+              <h3 class="box-title">Quick Email</h3>
+              <!-- tools box -->
+              <div class="pull-right box-tools">
+                <button type="button" class="btn btn-info btn-sm" data-widget="remove" data-toggle="tooltip" title="Remove">
+                  <i class="fa fa-times"></i></button>
+              </div>
+              <!-- /. tools -->
+            </div>
+            <div class="box-body">
+              <form action="#" method="post">
+                <div class="form-group">
+                  <input type="email" class="form-control" name="emailto" placeholder="Email to:">
+                </div>
+                <div class="form-group">
+                  <input type="text" class="form-control" name="subject" placeholder="Subject">
+                </div>
+                <div>
+                  <textarea class="textarea" placeholder="Message" style="width: 100%; height: 125px; font-size: 14px; line-height: 18px; border: 1px solid #dddddd; padding: 10px;"></textarea>
+                </div>
+              </form>
+            </div>
+            <div class="box-footer clearfix">
+              <button type="button" class="pull-right btn btn-default" id="sendEmail">Send
+                <i class="fa fa-arrow-circle-right"></i></button>
+            </div>
+          </div>
+
+        </section>
+        <!-- /.Left col -->
+        <!-- right col (We are only adding the ID to make the widgets sortable)-->
+        <section class="col-lg-5 connectedSortable">
+
+          <!-- Map box -->
+          <div class="box box-solid bg-light-blue-gradient">
+            <div class="box-header">
+              <!-- tools box -->
+              <div class="pull-right box-tools">
+                <button type="button" class="btn btn-primary btn-sm daterange pull-right" data-toggle="tooltip" title="Date range">
+                  <i class="fa fa-calendar"></i></button>
+                <button type="button" class="btn btn-primary btn-sm pull-right" data-widget="collapse" data-toggle="tooltip" title="Collapse" style="margin-right: 5px;">
+                  <i class="fa fa-minus"></i></button>
+              </div>
+              <!-- /. tools -->
+
+              <i class="fa fa-map-marker"></i>
+
+              <h3 class="box-title">
+                Visitors
+              </h3>
+            </div>
+            <div class="box-body">
+              <div id="world-map" style="height: 250px; width: 100%;"></div>
+            </div>
+            <!-- /.box-body-->
+            <div class="box-footer no-border">
+              <div class="row">
+                <div class="col-xs-4 text-center" style="border-right: 1px solid #f4f4f4">
+                  <div id="sparkline-1"></div>
+                  <div class="knob-label">Visitors</div>
+                </div>
+                <!-- ./col -->
+                <div class="col-xs-4 text-center" style="border-right: 1px solid #f4f4f4">
+                  <div id="sparkline-2"></div>
+                  <div class="knob-label">Online</div>
+                </div>
+                <!-- ./col -->
+                <div class="col-xs-4 text-center">
+                  <div id="sparkline-3"></div>
+                  <div class="knob-label">Exists</div>
+                </div>
+                <!-- ./col -->
+              </div>
+              <!-- /.row -->
+            </div>
+          </div>
+          <!-- /.box -->
+
+          <!-- solid sales graph -->
+          <div class="box box-solid bg-teal-gradient">
+            <div class="box-header">
+              <i class="fa fa-th"></i>
+
+              <h3 class="box-title">Sales Graph</h3>
+
+              <div class="box-tools pull-right">
+                <button type="button" class="btn bg-teal btn-sm" data-widget="collapse"><i class="fa fa-minus"></i>
+                </button>
+                <button type="button" class="btn bg-teal btn-sm" data-widget="remove"><i class="fa fa-times"></i>
+                </button>
+              </div>
+            </div>
+            <div class="box-body border-radius-none">
+              <div class="chart" id="line-chart" style="height: 250px;"></div>
+            </div>
+            <!-- /.box-body -->
+            <div class="box-footer no-border">
+              <div class="row">
+                <div class="col-xs-4 text-center" style="border-right: 1px solid #f4f4f4">
+                  <input type="text" class="knob" data-readonly="true" value="20" data-width="60" data-height="60" data-fgColor="#39CCCC">
+
+                  <div class="knob-label">Mail-Orders</div>
+                </div>
+                <!-- ./col -->
+                <div class="col-xs-4 text-center" style="border-right: 1px solid #f4f4f4">
+                  <input type="text" class="knob" data-readonly="true" value="50" data-width="60" data-height="60" data-fgColor="#39CCCC">
+
+                  <div class="knob-label">Online</div>
+                </div>
+                <!-- ./col -->
+                <div class="col-xs-4 text-center">
+                  <input type="text" class="knob" data-readonly="true" value="30" data-width="60" data-height="60" data-fgColor="#39CCCC">
+
+                  <div class="knob-label">In-Store</div>
+                </div>
+                <!-- ./col -->
+              </div>
+              <!-- /.row -->
+            </div>
+            <!-- /.box-footer -->
+          </div>
+          <!-- /.box -->
+
+          <!-- Calendar -->
+          <div class="box box-solid bg-green-gradient">
+            <div class="box-header">
+              <i class="fa fa-calendar"></i>
+
+              <h3 class="box-title">Calendar</h3>
+              <!-- tools box -->
+              <div class="pull-right box-tools">
+                <!-- button with a dropdown -->
+                <div class="btn-group">
+                  <button type="button" class="btn btn-success btn-sm dropdown-toggle" data-toggle="dropdown">
+                    <i class="fa fa-bars"></i></button>
+                  <ul class="dropdown-menu pull-right" role="menu">
+                    <li><a href="#">Add new event</a></li>
+                    <li><a href="#">Clear events</a></li>
+                    <li class="divider"></li>
+                    <li><a href="#">View calendar</a></li>
+                  </ul>
+                </div>
+                <button type="button" class="btn btn-success btn-sm" data-widget="collapse"><i class="fa fa-minus"></i>
+                </button>
+                <button type="button" class="btn btn-success btn-sm" data-widget="remove"><i class="fa fa-times"></i>
+                </button>
+              </div>
+              <!-- /. tools -->
+            </div>
+            <!-- /.box-header -->
+            <div class="box-body no-padding">
+              <!--The calendar -->
+              <div id="calendar" style="width: 100%"></div>
+            </div>
+            <!-- /.box-body -->
+            <div class="box-footer text-black">
+              <div class="row">
+                <div class="col-sm-6">
+                  <!-- Progress bars -->
+                  <div class="clearfix">
+                    <span class="pull-left">Task #1</span>
+                    <small class="pull-right">90%</small>
+                  </div>
+                  <div class="progress xs">
+                    <div class="progress-bar progress-bar-green" style="width: 90%;"></div>
+                  </div>
+
+                  <div class="clearfix">
+                    <span class="pull-left">Task #2</span>
+                    <small class="pull-right">70%</small>
+                  </div>
+                  <div class="progress xs">
+                    <div class="progress-bar progress-bar-green" style="width: 70%;"></div>
+                  </div>
+                </div>
+                <!-- /.col -->
+                <div class="col-sm-6">
+                  <div class="clearfix">
+                    <span class="pull-left">Task #3</span>
+                    <small class="pull-right">60%</small>
+                  </div>
+                  <div class="progress xs">
+                    <div class="progress-bar progress-bar-green" style="width: 60%;"></div>
+                  </div>
+
+                  <div class="clearfix">
+                    <span class="pull-left">Task #4</span>
+                    <small class="pull-right">40%</small>
+                  </div>
+                  <div class="progress xs">
+                    <div class="progress-bar progress-bar-green" style="width: 40%;"></div>
+                  </div>
+                </div>
+                <!-- /.col -->
+              </div>
+              <!-- /.row -->
+            </div>
+          </div>
+          <!-- /.box -->
+
+        </section>
+        <!-- right col -->
+      </div>
+      <!-- /.row (main row) -->
+
+    </section>
+    <!-- /.content -->
+  
